@@ -10,8 +10,12 @@ import firstPic from "../src/assets/firstPic.png";
 import secondPic from "../src/assets/secondPic.png";
 import thirdPic from "../src/assets/thirdPic.png";
 import Quotes from "./components/Quotes";
+import Login from "./components/login/Login";
 function App() {
-  const [count, setCount] = useState(0);
+  const [password, setPassword] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    JSON.parse(localStorage.getItem("celebrantLoggedIn")) || false
+  );
   const cards = [
     {
       bg: "red",
@@ -53,9 +57,9 @@ function App() {
   const { width, height } = useWindowSize();
   let newHeight = height - 195;
   let newWidth = width - 20;
-  if(width < 500) {
+  if (width < 500) {
     newWidth = width - 20;
-    newHeight = height - 205;
+    newHeight = height - 169;
   }
   var settings = {
     className: "center",
@@ -98,29 +102,62 @@ function App() {
     ],
   };
 
+  function loginFunc(e) {
+    e.preventDefault();
+    if (password.toLowerCase() == "rice") {
+      setPassword("");
+      setIsLoggedIn(true);
+      localStorage.setItem("celebrantLoggedIn", JSON.stringify(true));
+    }
+  }
+  function handleLogout() {
+    setIsLoggedIn(false);
+    localStorage.removeItem("celebrantLoggedIn");
+  }
+
   return (
     <>
-      <Confetti width={newWidth} height={newHeight} />
-      <h1>Happy Birthday Babe!</h1>
-      <div className="cardsWrapper">
-        <Slider {...settings}>
-          {cards.map((card, idx) => {
-            return (
-              <Card
-                bgColor={card.bg}
-                bgPic={card.bgPic}
-                key={idx}
-                id={idx}
-                inCenter={idx + 0.5 == cards.length / 2}
-              />
-            );
-          })}
-        </Slider>
-        <Quotes />
-      </div>
-      {/* <div className="card">
-           second Card
-      </div> */}
+      {isLoggedIn ? (
+        <>
+          <Confetti width={newWidth} height={newHeight} />
+          <h1>Happy Birthday Babe!</h1>
+          <div className="cardsWrapper">
+            <Slider {...settings}>
+              {cards.map((card, idx) => {
+                return (
+                  <Card
+                    bgColor={card.bg}
+                    bgPic={card.bgPic}
+                    key={idx}
+                    id={idx}
+                    inCenter={idx + 0.5 == cards.length / 2}
+                  />
+                );
+              })}
+            </Slider>
+            <Quotes />
+            <button className="logoutBtn" onClick={handleLogout}>
+              Logout
+            </button>
+            <iframe
+              style={{ borderRadius: "12px" }}
+              src="https://open.spotify.com/embed/playlist/6uxeN4IBwcL0rvbQLliSgX?utm_source=generator"
+              width="100%"
+              height="352"
+              frameBorder="0"
+              allowFullScreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </>
+      ) : (
+        <Login
+          password={password}
+          setPassword={setPassword}
+          loginFunc={loginFunc}
+        />
+      )}
     </>
   );
 }
