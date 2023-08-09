@@ -55,7 +55,7 @@ function App() {
   let newWidth = width - 20;
   if(width < 500) {
     newWidth = width - 20;
-    newHeight = height - 215;
+    newHeight = height - 205;
   }
   var settings = {
     className: "center",

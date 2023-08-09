@@ -13,7 +13,7 @@ function Quotes() {
     "On your birthday, I want to shower you with all the love and affection you deserve. Happy birthday, my love!",
     "Your presence in my life has brought me nothing but happiness and love. Here's to celebrating you on your special day!",
     "As you blow out the candles, know that each one represents a wish of mine for you. Happy birthday, sweetheart.",
-    "To the person who makes my heart skip a beat, happy birthday! May your day be as incredible as you are.",
+    "To the person who makes my heart skip a bit, happy birthday! May your day be as incredible as you are.",
     "Here's to celebrating another year of adventures, laughter, and love together. Happy birthday, my one and only.",
   ];
 
