@@ -1,0 +1,149 @@
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+}
+body {
+  background-color: rgba(237, 244, 246, 1);
+  min-height: 100vh;
+  padding-top: 40px;
+}
+
+h1 {
+  text-align: center;
+  /* padding-top: 20px; */
+  color: rgba(8, 151, 170, 1);
+  font-size: 3rem;
+}
+.cardsWrapper {
+  /* display: flex; */
+  width: 100%;
+  padding: 2rem;
+  /* margin-top: 30px; */
+}
+.slick-track > div {
+  /* background-color: blueviolet; */
+  padding: 0 10px;
+}
+
+.card {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  /* background-color: gold; */
+  margin: 0 auto;
+  height: 350px;
+}
+.card > img {
+  height: 80%;
+  object-fit: contain;
+  border-radius: 20px;
+  /* border: 4px solid pink; */
+}
+
+/* .center {
+  height: 200px;
+  
+} */
+
+.center .slick-slide {
+  transition: transform 0.3s ease-in-out; /* Add a smooth transition for slide animations */
+  width: 12%;
+  /* background-color: blueviolet; */
+}
+
+.center .slick-center {
+  transform: scale(1.6);
+  /* padding: 0 100px; */
+  height: 100%;
+  border-radius: 10px;
+  border: 1px solid pink;
+}
+.center .slick-center div {
+  border: 4px solid pink;
+}
+.center .slick-center img {
+  border: 4px solid pink;
+}
+
+.center .slick-prev,
+.center .slick-next {
+  display: none;
+  background-color: #333; /* Change the background color of the navigation arrows */
+  color: #fff; /* Set the color of the arrow icons */
+  border-radius: 50%; /* Make the arrow buttons circular */
+  padding: 8px; /* Add some padding around the arrows */
+}
+
+.center .slick-prev {
+  left: -40px; /* Position the previous arrow to the left */
+}
+
+.center .slick-next {
+  right: -40px; /* Position the next arrow to the right */
+}
+
+.center .slick-prev:hover,
+.center .slick-next:hover {
+  background-color: #555; /* Change the background color on hover */
+}
+
+.center .slick-dots {
+  bottom: 20px; /* Adjust the position of the pagination dots */
+}
+
+.center .slick-dots li button:before {
+  font-size: 12px; /* Adjust the size of the pagination dots */
+  color: #888; /* Set the color of the pagination dots */
+}
+
+/* QUOTES STYLING */
+
+.quotesWrapper {
+  width: 400px;
+  margin: 0 auto;
+  height: fit-content;
+  margin-top: 50px;
+  /* background-color: red; */
+}
+
+.quotesWrapper p {
+  width: 100%;
+  text-align: center;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 19px;
+
+}
+
+@media (max-width: 600px) {
+  
+  body {
+    background-color: rgba(237, 244, 246, 1);
+    min-height: 100vh;
+    width: 100vw;
+  }
+  .card {
+    width: 100%;
+  }
+  .cardsWrapper {
+    /* display: flex; */
+    width: 100%;
+    padding: 2rem;
+    margin: 0 auto;
+  }
+  h1 {
+    margin: 40px 0;
+  }
+  .quotesWrapper {
+    width: 280px;
+    font-family: 'Open Sans', sans-serif;
+  }
+}
