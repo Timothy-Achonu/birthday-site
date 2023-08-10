@@ -139,7 +139,7 @@ function App() {
             <button className="logoutBtn" onClick={handleLogout}>
               Logout
             </button>
-            <iframe
+            {/* <iframe
               style={{ borderRadius: "12px" }}
               src="https://open.spotify.com/embed/playlist/6uxeN4IBwcL0rvbQLliSgX?utm_source=generator"
               width="100%"
@@ -148,6 +148,22 @@ function App() {
               allowFullScreen=""
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
+            ></iframe> */}
+            <iframe
+              allow="autoplay; encrypted-media; fullscreen; clipboard-write"
+              frameBorder="0"
+              height="450"
+              width="100%"
+              style={{
+                width: "100%",
+                // maxWidth: "660px",
+                overflow: "hidden",
+                borderRadius: "10px",
+                margin: '0 auto',
+
+              }}
+              // sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+              src="https://embed.music.apple.com/ng/playlist/mines/pl.u-aZb0094s1mJPXzW"
             ></iframe>
           </div>
         </>
